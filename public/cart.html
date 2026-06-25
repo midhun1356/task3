@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Cart</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Your Cart</h1>
+
+
+<ul id="cart"></ul>
+
+
+<script>
+
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let list=document.getElementById("cart");
+
+
+cart.forEach(item=>{
+
+
+let li=document.createElement("li");
+
+
+li.innerHTML =
+item.name+" - ₹"+item.price;
+
+
+list.appendChild(li);
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
